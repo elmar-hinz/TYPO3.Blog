@@ -14,8 +14,8 @@ Bootstrapping
 
 Bootstrapping basically happens in 3 parts:
 
-    1. Environmental analyse
-    2. Reading configuration
+    1. Analysis of the environment
+    2. Reading the configuration
     3. Firering up the global tool chain: DB, Caching, etc.
 
 Running :code:`typo3/index.php`::
