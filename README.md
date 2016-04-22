@@ -1,2 +1,3 @@
-# Website.TYPO3.shinx
-TYPO3 related articles 
+# TYPO3 - Elmar’s Personal Knowlege Collection 
+
+A Sphinx repository.
