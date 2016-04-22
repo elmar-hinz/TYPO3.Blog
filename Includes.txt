@@ -1,0 +1,49 @@
+﻿.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
+
+.. This is 'Includes.txt'. It is included at the very top of each and
+   every ReST source file in this documentation project (= manual).
+
+
+.. ==================================================
+.. DEFINE SOME TEXT ROLES
+.. --------------------------------------------------
+
+.. role::   typoscript(code)
+
+.. role::   ts(typoscript)
+   :class:  typoscript
+
+.. role::   php(code)
+
+.. highlight:: guess
+
+.. ==================================================
+.. EXTERNAL LINKS
+.. --------------------------------------------------
+
+.. _`5 min tutorial video`: http://www.youtube.com/watch?v=YeGqHMDT7R8
+
+.. _dd_googlesitemap: https://typo3.org/extensions/repository/view/dd_googlesitemap
+
+.. _`post of mine in Google+`: https://plus.google.com/117624290123792924579/posts/R5H1ZUMcwEm
+
+.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+
+.. _`setup.txt`: https://git.typo3.org/TYPO3CMS/Extensions/restdoc.git/blob/HEAD:/Configuration/TypoScript/setup.txt
+
+.. _SEO: http://en.wikipedia.org/wiki/Search_engine_optimization
+
+.. _`the TYPO3 wiki`: http://wiki.typo3.org/ReST
+
+.. _`Tips and Tricks`: http://wiki.typo3.org/Tips_and_Tricks_%28reST%29
+
+.. _`TypoScript snippets`: https://git.typo3.org/TYPO3CMS/Extensions/restdoc.git/tree/HEAD:/Resources/Private/Examples
+
+.. _Wappalizer: http://wappalyzer.com/
+
+.. _`Webmaster Central Blog`: http://googlewebmastercentral.blogspot.ch/2011/09/pagination-with-relnext-and-relprev.html
+
+
