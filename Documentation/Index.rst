@@ -97,9 +97,9 @@ render your docs directly. Depending on your setup you have to do some
 tiny adjustments to get it running.
 
 .. tip::
-   The main index file of the extension documenation is named Index.rst.
-   `Read the Docs` want's it lowercase, beacuse the server is configured
-   to ship index.html as the index file. A symblic link does the tric.
+   The main index file of the extension documenation is named **Index.rst**.
+   `Read the Docs` want's it **lowercase**, beacuse the server is configured
+   to ship **index.html** as the index file. A symblic link does the tric.
 
    .. code::
 
@@ -116,8 +116,8 @@ tiny adjustments to get it running.
 
 .. tip::
     You select the theme by the parameter ``html_theme``. Setting it to
-    `default` will give you the ``Read the Docs`` standard theme. Alternatively
-    you can selet one of `Sphinx built in themes`_ like `alabaster` or `haiku`.
-    (How to set the theme of docs.typo3.org, will require your own research, to
-    find out.)
+    **default** will give you the `Read the Docs` standard theme. Alternatively
+    you can selet one of `Sphinx built in themes`_ like **alabaster**
+    or **haiku**. (How to set the theme of docs.typo3.org, will require your
+    own research, to find out.)
 
