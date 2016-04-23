@@ -63,3 +63,12 @@ reStructuredText
 :Reference: http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
 :Cheatsheet: http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt
 
+------
+Sphinx
+------
+
+:Main: http://www.sphinx-doc.org
+:Introduction: http://www.sphinx-doc.org/tutorial.html
+:Configuration: http://www.sphinx-doc.org/config.html
+:Hosting: https://readthedocs.org
+
