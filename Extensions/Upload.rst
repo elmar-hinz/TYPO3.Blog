@@ -16,39 +16,48 @@ Manual upload step by step
 
 1. Make Git up-to-date.
 
-2. Grep for the old version number to find all files to adjust.
-   ::
+#. Grep for the old version number to find all files to adjust.
 
-    grep -r '1\.0\.2' .
+    .. code::
 
-    ./ChangeLog
-    ./Documentation/Settings.yml
-    ./ext_emconf.php
+        grep -r '1\.0\.2' .
 
-3. Adjust the files.
+        ./ChangeLog
+        ./Documentation/Settings.yml
+        ./ext_emconf.php
 
-4. Write entry to ChangeLog
+#. Adjust the files.
 
-5. Commit changes
+#. Write entry to ChangeLog
 
-6. Make tag:
-   ::
+#. Commit and push the changes.
 
-    git tag 1.0.3
-    git push --tags
+    .. code::
 
-7. Open upload form:
-   ::
+        git commit -am "The message"
+        git push
 
-    https://typo3.org/extensions/extension-keys/
+#. Make tag.
 
-8. There you find the documentation how to zip with git.
-   ::
+    .. code::
 
-    git archive -o "${PWD##*/}_x.y.z.zip" HEAD
+        git tag 1.0.3
+        git push --tags
 
-9. Create file, upload, write upload comment.
+#. Zip with git.
 
+    .. code::
 
+        git archive -o "${PWD##*/}_1.0.3.zip" HEAD
+
+    The version of the file must match the version given above.
+
+#. Open upload form.
+
+    .. code::
+
+        https://typo3.org/extensions/extension-keys/
+
+#. Upload with upload comment.
 
 
