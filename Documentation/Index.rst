@@ -73,8 +73,9 @@ immediately, long before you upload the extension to TER. You can direct
 those people, who like to use your latest version from Git, to the latest
 documentation.
 
-The immediate availability of your edits may encourage you, to write more early
-and more often, side by side with your extension development.
+.. hint::
+    The immediate availability of your edits may encourage you, to write more early
+    and more often, side by side with your extension development.
 
 -----------
 The Concept
@@ -118,7 +119,7 @@ tiny adjustments to get it running.
     while `Read the Docs` requires a file named ``conf.py``. A little work,
     but you gain the option to provide different configurations for both.
 
-.. tip::
+.. hint::
     See an example_ of conf.py_. Running the sphinx-quickstart_ tool is a
     way to autogenerate that file. (Better use an empty directory.)
 
