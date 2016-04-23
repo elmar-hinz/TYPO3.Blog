@@ -68,7 +68,7 @@ Well, your documentation is published on https://docs.typo3.org, isn't that
 enough? Yes, it is enough. However, publishing to multiple channels may
 be better, especially if it can be done by a fully automated process.
 
-Moreover, with every push the latest version of your documentation is published
+Moreover, with every push the latest edit of your documentation is published
 immediately, long before you upload the extension to TER. You can direct
 those people, who like to use your latest version from Git, to the latest
 documentation.
