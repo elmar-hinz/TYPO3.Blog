@@ -64,9 +64,14 @@ Your documentations gets it's own subdomain like this:
 Why should I do that?
 ---------------------
 
-Well your documentation is published on https://docs.typo3.org, isn't that
+Well, your documentation is published on https://docs.typo3.org, isn't that
 enough? Yes, it is enough. However, publishing to multiple channels may
 be better, especially if it can be done by a fully automated process.
+
+Morever, with every push the latest version of your documentation is published
+immediately, long before you upload the extension to TER. You can redirect
+those people, who like to use your latest version from Git to the latest
+documentation.
 
 -----------
 The Concept
