@@ -99,7 +99,7 @@ tiny adjustments to get it running.
 .. tip::
    The main index file of the extension documenation is named Index.rst.
    `Read the Docs` want's it lowercase, beacuse the server is configured
-   to ship index.html als the index file. A symblic link does the tric.
+   to ship index.html as the index file. A symblic link does the tric.
 
    .. code::
 

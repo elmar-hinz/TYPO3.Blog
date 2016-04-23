@@ -72,3 +72,12 @@ Sphinx
 :Configuration: http://www.sphinx-doc.org/config.html
 :Hosting: https://readthedocs.org
 
+-----------------------------
+Local Documentation Rendering
+-----------------------------
+
+:GitHub: https://github.com/marble/typo3-docs-typo3-org-resources
+:Make: https://github.com/marble/typo3-docs-typo3-org-resources/tree/master/TemplatesForCopying/a-starter-for-a-project-with-documentation/Documentation/_make
+:Howto: http://mbless.de/blog/2015/10/24/a-new-task-for-an-old-server.html
+
+
