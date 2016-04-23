@@ -73,6 +73,9 @@ immediately, long before you upload the extension to TER. You can direct
 those people, who like to use your latest version from Git, to the latest
 documentation.
 
+The immediate availability of your edits may encourage you, to write more early
+and more often, side by side with your extension development.
+
 -----------
 The Concept
 -----------
