@@ -9,24 +9,24 @@
 
 .. _LocalDomain:
 
-==================================================================
-Managing a Local Domain dev to Address Multiple Dockers Containers
-==================================================================
+=================================================================
+Managing a Local Domain dev to Address Multiple Docker Containers
+=================================================================
 
 Overview
 ========
 
 I keep my TYPO3 projects in Docker containers on a Macbook Pro.
 Dockers run inside Linux. The Linux is a virtual machine controlled
-by Vagrant. This results in three nested OS levels:
+by Vagrant. This results in three nested levels of operating systems:
 
     OS X -> Ubuntu -> Dockers
 
 Goals
 =====
 
-I want to set up a local domain **dev** to map local subdomains to docker
-containers, when called from the web-browser::
+I want to set up a local domain **dev**, to map local subdomains to docker
+containers, when called from the web browser::
 
     core.dev => 192.168.56.2:8000
     ehfaq.dev => 192.168.56.2:8001
@@ -40,13 +40,14 @@ is accessible by a port on the Vagrant machine.
 Conception
 ==========
 
-The file `/etc/hosts` doesn't work with an asterix with `OS X`. By a file
-named `/etc/resolver/dev` I can register the address `127.0.0.1`, the address
-of a local DNS for the top level domain **dev**.
+The file :code:`/etc/hosts` doesn't work with an asterix with `OS X`. By a file
+named :code:`/etc/resolver/dev` I can register the address `127.0.0.1`, the
+address of a local DNS, for the top level domain **dev**.
 
 `Dnsmasq` is the choice, as it is easily installed by `Homebrew` and as easily
 to configure. In this case all it needs to do, is to serve the address
-`127.0.0.1` for all subdomains of `dev`, as we need a proxy for the next step.
+:code:`127.0.0.1` for all subdomains of **dev**, as we need a proxy for the
+next step.
 
 Differnt ports of the Vagrant machine shall serve for different domain
 names. This is out of the service of a DNS. A proxy can do this. My choice is
@@ -71,7 +72,7 @@ I install with Homebrew.
     brew install dnsmasq
 
 The Homebrew installation process outputs some help to get me started. The
-actual pathes depend on the system setup:
+actual paths depend on the systems setup:
 
 .. code::
 
@@ -87,8 +88,8 @@ actual pathes depend on the system setup:
 
      WARNING: launchctl will fail when run under tmux.
 
-I follow the advices how to place the configuration files and how to start
-the service. There is only one entry to put into the ``dnsmasq.conf`` file.
+I follow the advices, how to place the configuration files and how to start
+the service. There is only one entry to put into the :code:`dnsmasq.conf` file.
 
 .. code::
 
@@ -113,8 +114,8 @@ Configuring OS X
 ----------------
 
 The domain **dev** get's a dedicated resolver file in the directory
-``/etc/resolver``. If it doesn't already exists, it needs to be created first.
-Then the mapping is written into it.
+:code:`/etc/resolver`. If it doesn't already exists, it needs to be created
+first. Then the mapping is written into it.
 
 .. code:: bash
 
@@ -129,7 +130,7 @@ Check :code:`cat /etc/resolver/dev` answers ``nameserver 127.0.0.1``.
 Testing the DNS
 ---------------
 
-If both parts are set up correctly I can use ping to test the setup.
+I can use :code:`ping` to check, if both parts play well together.
 
 .. code:: bash
 
@@ -139,7 +140,7 @@ If both parts are set up correctly I can use ping to test the setup.
     ping -c 1 test1.dev
     ping -c 1 test2.dev
 
-All :code:`*.dev` domains should now direct to :code:`127.0.0.1`.
+All :code:`*.dev` domains should now direct to `127.0.0.1`.
 
 
 Getting the Proxy Working
