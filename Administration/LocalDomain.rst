@@ -28,7 +28,7 @@ Goals
 I want to set up a local domain **dev**, to map local subdomains to docker
 containers, when called from the web browser::
 
-    core.dev => 192.168.56.2:8000
+    elmar.dev => 192.168.56.2:8000
     ehfaq.dev => 192.168.56.2:8001
     esp.dev => 192.168.56.2:8002
     [...]
@@ -46,7 +46,7 @@ address of a local DNS, for the top level domain **dev**.
 
 `Dnsmasq` is the choice, as it is easily installed by `Homebrew` and as easily
 to configure. In this case all it needs to do, is to serve the address
-:code:`127.0.0.1` for all subdomains of **dev**, as we need a proxy for the
+`127.0.0.1` for all subdomains of **dev**, as we need a proxy for the
 next step.
 
 Differnt ports of the Vagrant machine shall serve for different domain
@@ -70,6 +70,7 @@ I install with Homebrew.
     brew update
     brew upgrade
     brew install dnsmasq
+    man dnsmaq
 
 The Homebrew installation process outputs some help to get me started. The
 actual paths depend on the systems setup:
@@ -145,5 +146,103 @@ All :code:`*.dev` domains should now direct to `127.0.0.1`.
 
 Getting the Proxy Working
 =========================
+
+------------------
+Installing Haproxy
+------------------
+
+I install with Homebrew.
+
+.. code:: bash
+
+    brew install haproxy
+    man haproxy
+
+I create a configuration file. There is no default path for it.
+
+.. code:: bash
+
+    touch ~/.haproxy.conf
+
+I edit the configuration file to get a minimal response.
+
+.. code::
+
+    defaults
+        mode http
+        timeout connect 1000ms
+        timeout client 50000ms
+        timeout server 50000ms
+
+    listen stats
+        bind 0.0.0.0:9999
+        stats uri /
+
+I start the service for testing.
+
+.. code::
+
+    haproxy -f ~/.haproxy.conf
+
+I visit the URL ``http://localhost:9999`` to the `Statistics Report` running.
+
+Pressing ``CTRL-C`` to stop.
+
+-----------------------
+Configuring the Domains
+-----------------------
+
+Vagrant and the Dockers are running. Calling
+:code:`http://192.168.56.2:8000` displays the local page `Elmar Hinz`.
+Now I want to map it to :code:`http://elmar.dev` and similar for other
+Dockers.
+
+The minimal configuration looks like this.
+
+.. code::
+
+    global
+        daemon
+
+    defaults
+        mode http
+        timeout connect 1000ms
+        timeout client 50000ms
+        timeout server 50000ms
+
+    frontend http-in
+        bind *:80
+
+        acl is_site1 hdr_end(host) -i elmar.dev
+        acl is_site2 hdr_end(host) -i ehfaq.dev
+        acl is_site3 hdr_end(host) -i esp.dev
+
+        use_backend elmar if is_site1
+        use_backend ehfaq if is_site2
+        use_backend esp if is_site3
+
+    backend elmar
+        server elmar 192.168.56.2:8000
+
+    backend ehfaq
+        server ehfaq 192.168.56.2:8001
+
+    backend esp
+        server esp 192.168.56.2:8002
+
+    listen stats
+        bind 0.0.0.0:9999
+        stats uri /
+
+To make it listen to port **80**, I need to start it as **superuser**.
+
+.. code:: bash
+
+    sudo haproxy -f ~/.haproxy.conf
+
+It is configured as a daemon now and will continue running in the background.
+For now I use to commands :code: `ps aux | grep haproxy` and
+:code:`kill -9` to find and stop it.
+
 
 
