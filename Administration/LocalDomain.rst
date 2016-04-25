@@ -7,7 +7,6 @@
 
 .. _tutorial written by Thomas Sutton: dnsmaqTutorial_
 
-
 .. _LocalDomain:
 
 =================================================================
@@ -21,11 +20,14 @@ Managing a Local Domain dev to Address Multiple Docker Containers
 Overview
 ========
 
-I keep my TYPO3 projects in Docker containers on a Macbook Pro.
-Dockers run inside Linux. The Linux is a virtual machine controlled
-by Vagrant. This results in three nested levels of operating systems:
+I keep my `TYPO3` projects in `Docker containers` on a `Macbook Pro`.
+`Docker containers` live inside a `Linux machine`. My `Linux`
+is a `virtual machine` controlled by `Vagrant`, also addressed as
+`Vagrant box`. This setup results in three nested OS levels:
 
     OS X -> Ubuntu -> Dockers
+
+
 
 Goals
 =====
@@ -38,9 +40,12 @@ containers, when called from the web browser::
     esp.dev => 192.168.56.2:8002
     [...]
 
-The IP 192.168.56.2 is my Vagrant controlled virtual Linux machine, that
-hosts the docker containers. Each project lives in it's own container and
-is accessible by a port on the Vagrant machine.
+The ``IP 192.168.56.2`` is my `Vagrant box`, that hosts the `Docker containers`.
+Each project lives in it's own `Docker container suite` and is accessible
+by it's onw set of ports on the Vagrant machine.
+
+:ref:`parallelDockers` explains how to set up the `Docker suites` to be able
+to run them in parallel with dedicated ports each.
 
 Conception
 ==========

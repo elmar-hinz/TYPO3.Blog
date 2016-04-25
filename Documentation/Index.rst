@@ -53,6 +53,7 @@ Inline
 :Literal:
     * ````127.0.0.1```` => ``127.0.0.1``
     * ````Error 505```` => ``Error 505``
+    * ````docker-compose.yml```` => ``docker-compose.yml``
 :Strong:
     * ``**bold**`` => **bold**
 :Stressed:
