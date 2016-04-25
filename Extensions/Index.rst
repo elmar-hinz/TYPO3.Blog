@@ -11,6 +11,9 @@
 Extension programming and maintenance
 =====================================
 
+Index
+=====
+
 .. toctree::
     Upload
 

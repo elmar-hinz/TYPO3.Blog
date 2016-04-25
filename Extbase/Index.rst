@@ -11,6 +11,9 @@
 Extbase
 =======
 
+Index
+=====
+
 .. toctree::
     StoragePid
 

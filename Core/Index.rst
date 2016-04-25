@@ -11,6 +11,9 @@
 Core
 ====
 
+Index
+=====
+
 .. toctree::
     Bootstrapping
 

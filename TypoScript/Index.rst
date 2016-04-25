@@ -11,6 +11,9 @@
 TypoScript
 ==========
 
+Index
+=====
+
 .. toctree::
     Snippets
     Menus/Index
