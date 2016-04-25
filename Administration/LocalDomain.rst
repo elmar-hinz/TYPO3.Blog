@@ -245,9 +245,11 @@ To make it listen to port **80**, I need to start it as **superuser**.
 
     sudo haproxy -f ~/.haproxy.conf
 
-It is configured as a daemon now and will continue running in the background.
-For now I use to commands :code:`ps aux | grep haproxy` and
-:code:`sudo kill -9 [process id]` to find and stop it.
+.. hint::
+
+    It is configured as a daemon now and will continue running in the background.
+    For now I use to commands :code:`ps aux | grep haproxy` and
+    :code:`sudo kill -9 [process id]` to find and stop it.
 
 
 
