@@ -31,9 +31,67 @@ content within a TYPO3 generated page.
 Examples
 ========
 
-To see the reStructuredText source of this page click the link ``Show Source``
-in the Sidebar. You can do that on all pages here and even for most
-documentations hosted by `Read the docs`_.
+To see the reStructuredText source of this page click the link ``Page source``
+in the bottom ot this page. You can do that on all pages here and even for
+most documentations hosted by `Read the docs`_ or `docs.typo3.org`_.
+
+My Standards
+============
+
+------
+Inline
+------
+
+:Code:
+    * ``:code:`ls -al``` => :code:`ls -al`
+    * ``:ts:`10.10 = FLUIDTEMPLATE``` => :ts:`10.10 = FLUIDTEMPLATE`
+:Title:
+    * ``:title:`TYPO3``` => :title:`TYPO3`
+    * ```TYPO3``` => `TYPO3`
+    * ```HTML``` => `HTML`
+    * ```Elmar Hinz``` => `Elmar Hinz`
+:Literal:
+    * ````127.0.0.1```` => ``127.0.0.1``
+    * ````Error 505```` => ``Error 505``
+:Strong:
+    * ``**bold**`` => **bold**
+:Stressed:
+    * ``*italic*`` => *italic*
+
+-----------
+Text Blocks
+-----------
+
+Shell
+-----
+
+|    .. code-block:: bash
+|
+|        # Be nice!
+|        TYPO3="cool"
+|        echo $TYPO3
+
+.. code-block:: bash
+
+    # Be nice!
+    TYPO3="cool"
+    echo $TYPO3
+
+Python
+------
+
+|    .. code-block:: python
+|
+|        # Be nice!
+|        TYPO3 = "cool"
+|        print(TYPO3)
+
+.. code-block:: python
+
+    # Be nice!
+    TYPO3 = "cool";
+    print(TYPO3);
+
 
 Links
 =====
@@ -117,7 +175,7 @@ tiny adjustments to get it running.
    `Read the Docs` want's it **lowercase**, beacuse the server is configured
    to ship **index.html** as the index file. A symblic link does the tric.
 
-   .. code::
+   .. code-block:: bash
 
        ln -s Index.rst index.rst
 
