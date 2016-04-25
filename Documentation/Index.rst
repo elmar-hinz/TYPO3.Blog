@@ -28,6 +28,13 @@ language Python_
 not with PHP, but there are solutions, to present the Sphinx authored
 content within a TYPO3 generated page.
 
+Examples
+========
+
+To see the reStructuredText source of this page click the link ``Show Source``
+in the Sidebar. You can do that on all pages here and even for most
+documentations hosted by `Read the docs`_.
+
 Links
 =====
 
@@ -115,9 +122,10 @@ tiny adjustments to get it running.
        ln -s Index.rst index.rst
 
 .. tip::
-    The rendering on `docs.typo3.org`_ requires a file named ``Settings.cfg``
-    while `Read the Docs` requires a file named ``conf.py``. A little work,
-    but you gain the option to provide different configurations for both.
+    The rendering configuration on `docs.typo3.org`_ requires a file named
+    ``Settings.cfg`` while `Read the Docs` requires a file named ``conf.py``.
+    A little work, but you gain the option to provide different configurations
+    for both.
 
 .. hint::
     See an example_ of conf.py_. Running the sphinx-quickstart_ tool is a
