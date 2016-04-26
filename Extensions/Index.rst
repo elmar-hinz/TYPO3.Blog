@@ -16,4 +16,6 @@ Index
 
 .. toctree::
     Upload
+    UnitTesting
+    FunctionalTesting
 
