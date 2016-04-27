@@ -11,9 +11,34 @@
 Functional testing
 ==================
 
-A `TYPO3` funtiona test extends extends
+A `TYPO3` **funtional test** extends extends
 :code:`\TYPO3\CMS\Core\Tests\FunctionalTestCase`.
 
+.. code-block:: php
+
+    <?php
+    namespace ElmarHinz\Ehfaq\Tests\Functional;
+
+    use TYPO3\CMS\Core\Database\DatabaseConnection;
+
+    class ListOutputTestCase extends \TYPO3\CMS\Core\Tests\FunctionalTestCase
+    {
+
+        /**
+         * @test
+         */
+        public function databaseIsSet()
+        {
+            $db = $this->getDatabaseConnection();
+            $this->assertInstanceOf(DatabaseConnection::class, $db);
+        }
+
+    }
+
+    ?>
+
+The functional tests inside an extension are stored in the directory
+`Tests/Funtional` or a subdirectory of it.
 
 Running Functional Tests
 ========================
@@ -35,7 +60,7 @@ Running Functional Tests
     typo3DatabaseName="test" typo3DatabaseUsername="dev" \
     typo3DatabasePassword="dev" typo3DatabaseHost="127.0.0.1:33333" \
     ../vendor/bin/phpunit -c typo3/sysext/core/Build/FunctionalTests.xml \
-    typo3conf/ext/ehfaq/Tests/Functional/TODO.php
+    typo3conf/ext/ehfaq/Tests/Functional/ListOutputTestCase.php
 
 The Class Hierarchy
 ===================
