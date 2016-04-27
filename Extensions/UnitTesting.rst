@@ -11,12 +11,58 @@
 Unit Testing With TYPO3
 =======================
 
-Unit tests are stored below :code:`EXT:extkey/Tests/Unit`. A `TYPO3` unit test
-extends extends :code:`\TYPO3\CMS\Core\Tests\UnitTestCase`.
+A `TYPO3` unit test extends extends :code:`\TYPO3\CMS\Core\Tests\UnitTestCase`.
 
-:code:`\TYPO3\CMS\Core\Tests\UnitTestCase` extends
-:code:`\TYPO3\CMS\Core\Tests\BaseTestCase` extends
-:code:`\PHPUnit_Framework_TestCase`.
+.. code-block:: php
+
+    <?php
+    namespace ElmarHinz\MyKey\Tests\Unit;
+
+    class MyTestCase extends \TYPO3\CMS\Core\Tests\UnitTestCase
+    {
+        /**
+         * @test
+         */
+        public function assert_true()
+        {
+            $this->assertTrue(TRUE);
+        }
+    }
+
+    ?>
+
+The unit tests inside an extension are stored in the directory `Tests/Unit` or
+a subdirectory of it, matching the direcotory hierarchy within `Classes` like
+`Tests/Unit/Domain/Model`, `Test/Unit/Controller`.
+
+Running Unit Tests
+==================
+
+.. code-block:: bash
+
+    # Running all unit tests of the core from the web root (`app/web/`)
+    ../vendor/bin/phpunit -c typo3/sysext/core/Build/UnitTests.xml
+
+    # Running all unit tests inside an extension
+    ../vendor/bin/phpunit -c typo3/sysext/core/Build/UnitTests.xml typo3conf/ext/ehfaq/Tests/Unit/
+
+    # Running one test file inside an extension
+    ../vendor/bin/phpunit -c typo3/sysext/core/Build/UnitTests.xml typo3conf/ext/ehfaq/Tests/Unit/Controller/FAQControllerTest.php
+
+The Class Hierarchy
+===================
+
+::
+
+    \PHPUnit_Framework_TestCase
+          ^
+    \TYPO3\CMS\Core\Tests\BaseTestCase
+          ^
+    \TYPO3\CMS\Core\Tests\UnitTestCase
+          ^
+    \MyTestCase
+
+.. _BaseTestCase:
 
 BaseTestCase
 ============
@@ -67,6 +113,11 @@ UnitTestCase
      parent::tearDown() at the end. Unsetting of own properties
      is not needed this way.
 
+.. tip::
+
+    Make it a habit, to always call parent::setUp() or
+    parent::tearDown() for all kinds of tests.
+
 The property `$testFilesToDelete` is of importance.
 
 :testFilesToDelete:
@@ -79,20 +130,4 @@ The property `$testFilesToDelete` is of importance.
 
     Register files with `$testFilesToDelete` that are created for testing
     purposes only.
-
-Running Unit Tests
-==================
-
-.. code-block:: bash
-
-    # Running all unit tests from the web root (`app/web/`)
-    ../vendor/bin/phpunit -c typo3/sysext/core/Build/UnitTests.xml
-
-    # Running all unit tess inside an extension
-    ../vendor/bin/phpunit -c typo3/sysext/core/Build/UnitTests.xml typo3conf/ext/ehfaq/Tests/Unit/
-
-    # Running one test file inside an extension
-    ../vendor/bin/phpunit -c typo3/sysext/core/Build/UnitTests.xml typo3conf/ext/ehfaq/Tests/Unit/Controller/FAQControllerTest.php
-
-
 
