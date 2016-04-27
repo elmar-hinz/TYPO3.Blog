@@ -7,9 +7,17 @@
 
 .. _FunctionalTesting:
 
-==================
-Functional testing
-==================
+======================================
+Functional Testing of TYPO3 Extensions
+======================================
+
+.. contents::
+    :local:
+    :backlinks: none
+
+
+A Minimal Functional Test
+=========================
 
 A `TYPO3` **funtional test** extends extends
 :code:`\TYPO3\CMS\Core\Tests\FunctionalTestCase`.
@@ -27,12 +35,11 @@ A `TYPO3` **funtional test** extends extends
         /**
          * @test
          */
-        public function databaseIsSet()
+        public function fixtureIsUp()
         {
             $db = $this->getDatabaseConnection();
             $this->assertInstanceOf(DatabaseConnection::class, $db);
         }
-
     }
 
     ?>
@@ -75,17 +82,18 @@ The Class Hierarchy
           ^
     \MyTestCase
 
+------------
 BaseTestCase
-============
+------------
 
-From here on the hierarchy is shard with the `Unit Tests`.
+From here on upwards the hierarchy is shard with the `Unit Tests`.
 See :ref:`BaseTestCase`.
 
+------------------
 FunctionalTestCase
-==================
+------------------
 
 
------------------------
 Source code description
 -----------------------
 
@@ -122,7 +130,6 @@ Source code description
      *     typo3/sysext/core/Tests/Functional/DataHandling/DataHandlerTest.php
      */
 
----------
 Variables
 ---------
 
@@ -212,7 +219,6 @@ Variables
                 </be_users>
         </dataset>
 
--------
 Methods
 -------
 
@@ -235,4 +241,98 @@ Methods
 
 :getFrontendResponse:
     Call the FE output of localhost by `page id` and other optional parameters.
+
+Testing Frontend Output
+=======================
+
+--------
+The Test
+--------
+
+Testing `FE output` requires to fill the tables `pages` and `sys_template`
+with a minimum of setup. Afterwards the `FE output` can be tested by the
+method `getFrontendResponse`.
+
+.. code-block:: php
+
+    <?php
+    namespace ElmarHinz\Ehfaq\Tests\Functional;
+
+    class ListOutputTestCase extends \TYPO3\CMS\Core\Tests\FunctionalTestCase
+    {
+        protected $testExtensionsToLoad = [ 'typo3conf/ext/ehfaq' ];
+
+        public function setUp()
+        {
+            parent::setUp();
+            $this->importDataSet(
+                'typo3/sysext/core/Tests/Functional/Fixtures/pages.xml');
+            $this->setUpFrontendRootPage(1,
+                  ['EXT:ehfaq/Tests/Functional/Fixtures/Page.ts']);
+        }
+
+        /**
+         * @test
+         */
+        public function simplePageOutput()
+        {
+            $response = $this->getFrontendResponse(1);
+            $this->assertContains("Hello world!", $response->getContent());
+        }
+
+    }
+
+    ?>
+
+While the data into the table `pages` is imported with a general approach
+based on XML (`importDataSet`), the data into the table `sys_templates` is
+inserted by a dedicated method for `TS` . It doesn't insert the full `TS` but
+inserts include links to the `static templates`. The following string
+is generated and actually inserted. ``<INCLUDE_TYPOSCRIPT:
+source="FILE:typo3conf/ext/ehfaq/Tests/Functional/Fixtures/Page.ts">``.
+
+------------
+The Fixtures
+------------
+
+A Page Tree as XML
+------------------
+
+The core provides a fixture for a small **page tree** in the `XML file`
+`typo3/sysext/core/Tests/Functional/Fixtures/pages.xml`.
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <dataset>
+        <pages>
+            <uid>1</uid>
+            <pid>0</pid>
+            <title>Root</title>
+            <deleted>0</deleted>
+            <perms_everybody>15</perms_everybody>
+        </pages>
+
+        [ ... shortened ... ]
+
+        <pages>
+            <uid>7</uid>
+            <pid>0</pid>
+            <title>Root 2</title>
+            <deleted>0</deleted>
+            <perms_everybody>15</perms_everybody>
+        </pages>
+    </dataset>
+
+A Minimal TypoScript Setup
+---------------------------
+
+I put the minimal `TypoScript` setup into the extension into the `TS` file
+`EXT:ehfaq/Tests/Functional/Fixtures/Page.ts`.
+
+.. code-block:: ts
+
+    page = PAGE
+    page.10 = TEXT
+    page.10.value = <p>Hello world!</p>
 

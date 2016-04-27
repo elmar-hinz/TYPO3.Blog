@@ -7,9 +7,16 @@
 
 .. _UnitTesting:
 
-=======================
-Unit Testing With TYPO3
-=======================
+================================
+Unit Testing of TYPO3 Extensions
+================================
+
+.. contents::
+    :local:
+    :backlinks: none
+
+A Minimal Unit Test
+====================
 
 A `TYPO3` unit test extends extends :code:`\TYPO3\CMS\Core\Tests\UnitTestCase`.
 
@@ -64,8 +71,9 @@ The Class Hierarchy
 
 .. _BaseTestCase:
 
+------------
 BaseTestCase
-============
+------------
 
 `BaseTestCase` provides the following functions.
 
@@ -97,8 +105,9 @@ BaseTestCase
      uniqid() has a resolution of one second which results in identical ids
      if simply uniqid('Foo'); is called.
 
+------------
 UnitTestCase
-============
+------------
 
 `UnitTestCase` provides one function `tearDown`.
 

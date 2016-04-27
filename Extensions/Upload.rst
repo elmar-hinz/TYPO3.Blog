@@ -7,9 +7,9 @@
 
 .. _ExtensionUpload:
 
-================
-Extension upload
-================
+======================
+TYPO3 Extension Upload
+======================
 
 Manual upload step by step
 --------------------------
