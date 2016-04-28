@@ -258,7 +258,7 @@ method `getFrontendResponse`.
     <?php
     namespace ElmarHinz\Ehfaq\Tests\Functional;
 
-    class ListOutputTestCase extends \TYPO3\CMS\Core\Tests\FunctionalTestCase
+    class HelloPageTestCase extends \TYPO3\CMS\Core\Tests\FunctionalTestCase
     {
         protected $testExtensionsToLoad = [ 'typo3conf/ext/ehfaq' ];
 
@@ -277,7 +277,8 @@ method `getFrontendResponse`.
         public function simplePageOutput()
         {
             $response = $this->getFrontendResponse(1);
-            $this->assertContains("Hello world!", $response->getContent());
+            $this->assertContains("<p>Hello world!</p>",
+                $response->getContent());
         }
 
     }
