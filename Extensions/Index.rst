@@ -15,7 +15,7 @@ Index
 =====
 
 .. toctree::
-    UnitTesting
-    FunctionalTesting
+    UnitTesting/Index
+    FunctionalTesting/Index
     Upload
 
