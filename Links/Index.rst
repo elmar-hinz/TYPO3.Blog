@@ -15,22 +15,26 @@ TYPO3
 =====
 
 :TYPO3:
-	https://typo3.org/
+	https://typo3.org
 
 :TER:
-	https://typo3.org/extensions/
+	https://typo3.org/extensions
 
 :Bug Tracker:
-	https://forge.typo3.org/
+	https://forge.typo3.org
 
 :Gerrit:
-	https://review.typo3.org/
+	https://review.typo3.org
 
 :Docs:
     https://docs.typo3.org
 
+:Contribution Workflow:
+    https://docs.typo3.org/typo3cms/ContributionWorkflowGuide
+
 :DevOps:
     https://github.com/webdevops
+
 
 Mine
 ====
