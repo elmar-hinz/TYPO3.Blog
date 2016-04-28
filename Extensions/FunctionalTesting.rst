@@ -29,7 +29,7 @@ A `TYPO3` **funtional test** extends extends
 
     use TYPO3\CMS\Core\Database\DatabaseConnection;
 
-    class ListOutputTestCase extends \TYPO3\CMS\Core\Tests\FunctionalTestCase
+    class HelloWorldTestCase extends \TYPO3\CMS\Core\Tests\FunctionalTestCase
     {
 
         /**
@@ -67,7 +67,7 @@ Running Functional Tests
     typo3DatabaseName="test" typo3DatabaseUsername="dev" \
     typo3DatabasePassword="dev" typo3DatabaseHost="127.0.0.1:33333" \
     ../vendor/bin/phpunit -c typo3/sysext/core/Build/FunctionalTests.xml \
-    typo3conf/ext/ehfaq/Tests/Functional/ListOutputTestCase.php
+    typo3conf/ext/ehfaq/Tests/Functional/HelloWorldTestCase.php
 
 The Class Hierarchy
 ===================
