@@ -24,7 +24,7 @@ packed into a test that I can run with different versions of PHP and TYPO3.
 A good solution to run this test triggered by each `GIT` commit is the
 combination of `Github` and `Travis`.
 
-I export a minimalized version of `table data` and `TypoScript setup`. This is
+I export a minimalized version of table data and `TypoScript` setup. This is
 bundeled with the functional test class. Export means, I either create the
 `XML` files by hand or I actually export a selection of the data in the
 database as `XML`.
