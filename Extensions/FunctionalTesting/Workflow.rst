@@ -18,16 +18,19 @@ The Workflow of Functional Testing
 The Basic Workflow
 ==================
 
-I first manually create the output I want in the usual way. Then I export
-a minimalized version of `table data` and `TypoScript setup`. This is bundeled
-with the functional test class. Now I can run the tests with different versions
-of `PHP` and `TYPO3`.
+I first manually create the output I want in the usual way. This gives me
+a working DB and output that I can control visually. Now this needs to be
+packed into a test that I can run with different versions of PHP and TYPO3.
+A good solution to run this test triggered by each `GIT` commit is the
+combination of `Github` and `Travis`.
 
-Export means, I either create the `XML` files by hand to create minimal
-examples or I actually export a selection of the data in the database as `XML`.
+I export a minimalized version of `table data` and `TypoScript setup`. This is
+bundeled with the functional test class. Export means, I either create the
+`XML` files by hand or I actually export a selection of the data in the
+database as `XML`.
 
-The TYPO3 XML Export Format
-===========================
+The TYPO3 XML DB Fixture Format
+===============================
 
 The examples will show how the `XML` should be structured that the `TYPO3`
 functional testing expects. It usually differs a little from the `XML`
