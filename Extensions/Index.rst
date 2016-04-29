@@ -15,6 +15,7 @@ Index
 =====
 
 .. toctree::
+    FromScratch/Index
     UnitTesting/Index
     FunctionalTesting/Index
     Upload

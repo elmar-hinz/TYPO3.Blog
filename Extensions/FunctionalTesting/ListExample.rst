@@ -90,8 +90,13 @@ The Test
 
     ?>
 
-A special challange is, that the output rendering of `RTE` fields creates
-a lot of whitespace, that is ugly to insert as expectation. I apply a minimal
+In the `TypoScript` template I don't provide parser configuration
+``lib.parseFunc_RTE``. This causes the `RTE` field ``answer`` not to be
+rendered by the `Fluid` view helper tag ``<format.html>``. I get the native
+output.
+
+My `Fluid` templates (or is it the `RTE` formatter?)  create a lot of
+whitespace, that is ugly to write as expectation. I apply a minimal
 *tidy function* before I compare the expected and the actual output string.
 
 The whitespace is of little interest, but I check the order of the tags, the
@@ -175,4 +180,12 @@ However, it is easy to test from the point of the call to
         persistence.storagePid = 1
     }
 
+.. hint::
+
+    If I like to show, the `Fluid` view helper tags ``<f:format.html>`` are
+    actually working, I add the folling line::
+
+        lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.nonWrappedTag = P
+
+    This will wrap empty lines of the `RTE` fields into **p** tags.
 

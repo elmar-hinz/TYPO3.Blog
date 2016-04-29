@@ -16,3 +16,6 @@ Index
 
 .. toctree::
 
+    ViewHelpers/Index.rst
+
+
