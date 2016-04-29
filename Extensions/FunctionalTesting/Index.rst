@@ -16,4 +16,6 @@ Index
 
 .. toctree::
     GettingStarted
-    Advanced
+    Workflow
+    ListExample
+

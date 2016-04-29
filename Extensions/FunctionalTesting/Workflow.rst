@@ -5,11 +5,11 @@
 
 .. include:: ../../Includes.txt
 
-.. _AdvancedFunctionalTesting:
+.. _FunctionalTestingWorkflow:
 
-===========================
-Advanced Functional Testing
-===========================
+==================================
+The Workflow of Functional Testing
+==================================
 
 .. contents::
     :local:
@@ -22,6 +22,59 @@ I first manually create the output I want in the usual way. Then I export
 a minimalized version of `table data` and `TypoScript setup`. This is bundeled
 with the functional test class. Now I can run the tests with different versions
 of `PHP` and `TYPO3`.
+
+Export means, I either create the `XML` files by hand to create minimal
+examples or I actually export a selection of the data in the database as `XML`.
+
+The TYPO3 XML Export Format
+===========================
+
+The examples will show how the `XML` should be structured that the `TYPO3`
+functional testing expects. It usually differs a little from the `XML`
+that is exported by the tools and needs to be adjusted accordingly.
+
+The enclosing tag is ``dataset``. The children have the names of the
+tables. That is one tag per dataset, not per table. The tags of the
+sublevel name the fields.
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <dataset>
+
+        <pages>
+            <uid>1</uid>
+            <pid>0</pid>
+            [ ... more fields here ... ]
+        </pages>
+
+        <pages>
+            <uid>1</uid>
+            <pid>0</pid>
+            [ ... more fields here ... ]
+        </pages>
+
+        <tt_content>
+            <uid>1</uid>
+            <pid>0</pid>
+            [ ... more fields here ... ]
+        </tt_content>
+
+        [ ... more datasets here ... ]
+
+    </dataset>
+
+Size of the Fixtures
+====================
+
+I try to keep the fixtures as small is reasonable. In general I reduce the
+exports to the fields of interest and trust that the DB is set up well enough,
+to set the other fields to reasonable default values. Giving up the full
+control over the fixture is a price I pay, to gain more speed in writing tests,
+better readability and lower costs of maintenance.
+
+If bugs are observed, it becomes necessary to write tests with a more
+detailed control of the fixture.
 
 Exporting XML Datasets to Fixtures
 ==================================
@@ -37,6 +90,7 @@ Sequal Pro
 First I query the data I want to export by an `SQL query`. Then I click
 ``Menue > File > Export``. In the popup form I select **XML**,
 **Query Results** and **Plain Schema** and the path to save the file to.
+
 
 Trimming the Output and Including Multiple Templates
 ====================================================
@@ -105,5 +159,4 @@ The file `Fixtures/Trim.ts` is additionally included.
 .. code-block:: typoscript
 
     config.disableAllHeaderCode = 1
-
 
