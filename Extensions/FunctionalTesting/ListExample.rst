@@ -30,8 +30,6 @@ The Test
     <?php
     namespace ElmarHinz\Ehfaq\Tests\Functional;
 
-    use TYPO3\CMS\Core\Database\DatabaseConnection;
-
     class ListTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase
     {
         protected $testExtensionsToLoad = [ 'typo3conf/ext/ehfaq' ];
