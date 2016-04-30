@@ -84,4 +84,12 @@ Local Documentation Rendering
 :Make: https://github.com/marble/typo3-docs-typo3-org-resources/tree/master/TemplatesForCopying/a-starter-for-a-project-with-documentation/Documentation/_make
 :Howto: http://mbless.de/blog/2015/10/24/a-new-task-for-an-old-server.html
 
+Other
+=====
+
+:PSR: http://www.php-fig.org/psr/
+:Composer: https://getcomposer.org
+:Composer Doc: https://getcomposer.org/doc/
+:Semantic Versioning: http://semver.org
+:CMS Garden: http://www.cms-garden.org/
 

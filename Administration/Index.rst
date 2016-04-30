@@ -36,3 +36,4 @@ Index
     Vagrant Controlled Development Machine (Linux) <DevelopmentMachine>
     Docker Containers for TYPO3 Projects <Dockers>
     Managing a Local Domain: dev<LocalDomain>
+    Git
