@@ -25,4 +25,5 @@ Index
     Fluid/Index
     Extensions/Index
     Documentation/Index
+    ContinuousIntegration/Index
     Links/Index
