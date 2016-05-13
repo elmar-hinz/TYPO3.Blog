@@ -157,7 +157,7 @@ See :ref:`fixtures`.
 The file `Fixtures/Trim.ts` is additionally included.
 
 
-.. code-block:: typoscript
+.. code-block:: none
 
     config.disableAllHeaderCode = 1
 

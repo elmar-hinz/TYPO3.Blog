@@ -340,7 +340,7 @@ A Minimal TypoScript Setup
 I put the minimal `TypoScript` setup into the extension into the `TS` file
 `EXT:ehfaq/Tests/Functional/Fixtures/Hello.ts`.
 
-.. code-block:: typoscript
+.. code-block:: none
 
     page = PAGE
     page.10 = TEXT

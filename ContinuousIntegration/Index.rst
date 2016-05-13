@@ -5,7 +5,7 @@
 
 .. include:: ../Includes.txt
 
-.. _links:
+.. _continuousIntegration:
 
 ======================
 Continuous Integration

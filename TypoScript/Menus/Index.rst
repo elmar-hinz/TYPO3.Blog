@@ -18,7 +18,7 @@ This is the base of a modern CSS styled and JS controlled menu.
 It needs to be tweaked to include special functional parts of the
 page or to provide HTML classes for special purposes.
 
-.. code-block:: ts
+.. code-block:: none
 
     lib.ehdistribution.mainNavigation = HMENU
     lib.ehdistribution.mainNavigation {
@@ -54,7 +54,7 @@ Using a `CASE` object is a good approach to include special submenus.
 Here the title field of the page is used to detect it.  A page ID is also
 a good option. You may use constants to make it fully configurable.
 
-.. code-block:: ts
+.. code-block:: none
 
    NO = 1
     NO {

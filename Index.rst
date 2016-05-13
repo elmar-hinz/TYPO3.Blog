@@ -5,8 +5,6 @@
 
 .. include:: Includes.txt
 
-.. _home:
-
 ============================================
 TYPO3 - Elmar's Personal Knowlege Collection
 ============================================
@@ -15,6 +13,7 @@ Index
 =====
 
 .. toctree::
+
     Administration/Index
     Core/Index
     TCA/Index
@@ -24,6 +23,14 @@ Index
     Extbase/Index
     Fluid/Index
     Extensions/Index
+    SQL/Index
     Documentation/Index
     ContinuousIntegration/Index
     Links/Index
+
+.. toctree::
+    :hidden:
+
+    Extensions/FunctionalTesting
+
+

@@ -46,14 +46,15 @@ Inline
     * ``:code:`ls -al``` => :code:`ls -al`
     * ``:ts:`10.10 = FLUIDTEMPLATE``` => :ts:`10.10 = FLUIDTEMPLATE`
 :Title:
-    * ``:title:`TYPO3``` => :title:`TYPO3`
-    * ```TYPO3``` => `TYPO3`
     * ```HTML``` => `HTML`
     * ```Elmar Hinz``` => `Elmar Hinz`
+    * ```TYPO3``` => `TYPO3`
+    * ``:title:`TYPO3``` => :title:`TYPO3` (long form)
 :Literal:
     * ````127.0.0.1```` => ``127.0.0.1``
-    * ````Error 505```` => ``Error 505``
     * ````docker-compose.yml```` => ``docker-compose.yml``
+    * ````Error 505```` => ``Error 505``
+    * ``:literal:`Error 505``` => ``Error 505`` (long form)
 :Strong:
     * ``**bold**`` => **bold**
 :Stressed:
@@ -94,6 +95,24 @@ Python
     print(TYPO3);
 
 
+TypoScript - none
+-----------------
+
+|    .. code-block:: none
+|
+|        page = PAGE
+|        page.10 = TEXT
+|        page.10.value = Hello world!
+
+.. code-block:: none
+
+    page = PAGE
+    page.10 = TEXT
+    page.10.value = Hello world!
+
+There is no syntax highlighting for TS.
+In such cases  ``none`` is the choice.
+
 Links
 =====
 
@@ -114,6 +133,19 @@ Sphinx
 :Introduction: http://www.sphinx-doc.org/tutorial.html
 :Configuration: http://www.sphinx-doc.org/config.html
 :Hosting: https://readthedocs.org
+
+---------------
+UTF-8 with BOM?
+---------------
+
+The ``Includes.rst`` files, that are shipped to get started, suggest::
+
+    -*- coding: utf-8 -*- with BOM.
+
+Actually the tools today manage `UTF-8` well without **BOM**.
+I simply don't bother about and everything works fine.
+For sure `UTF-8` is the encoding of choice for almoust everything today.
+
 
 Publishing TYPO3 Extension Documentation on Readthedocs
 =======================================================
