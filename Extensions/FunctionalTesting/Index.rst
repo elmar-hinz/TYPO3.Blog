@@ -18,4 +18,5 @@ Index
     GettingStarted
     Workflow
     ListExample
+    Debugging
 
